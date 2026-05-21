@@ -1,0 +1,18 @@
+# Capybara Clicker 2 - The Ultimate Idle Game Portal
+
+This portal features **Capybara Clicker 2** as the main, root-level game along with a collection of curated idle and clicker games.
+
+## Games Collection
+- **Capybara Clicker 2 (Home)**: Click to multiply your capybara population, unlock cute skins, buy upgrades, and rule your capybara empire directly on the homepage.
+- **Cookie Clicker**: Bake billions of cookies, hire grandmas, build cookie farms, and establish a global baking monopoly.
+- **Chill Guy Clicker**: Generate vibes by clicking the relaxed pup, purchase cozy lo-fi beats, coffee, and sunglasses upgrades.
+- **Italian Brainrot Clicker**: Click the buff Italian goose to accumulate brainrot and unlock viral meme characters.
+
+## Features
+- **Responsive Design**: All games are optimized for mobile and desktop screens.
+- **Auto-Save Support**: Progress is saved automatically to browser local storage so you can safely resume playing anytime.
+- **Standalone Experience**: Dedicated standalone game page configurations with clean navigation panels and header pills.
+
+## Crawling & Access
+- **AI Crawling**: Fully allowed.
+- **Sitemap**: Available at `/sitemap.xml`.
