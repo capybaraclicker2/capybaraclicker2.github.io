@@ -2,6 +2,8 @@
 
 Welcome to **Capybara Clicker 2**, the ultimate hub for premium unblocked idle and clicker games. This portal features a collection of addictive clicker games optimized for maximum performance, responsive mobile play, and clean navigation.
 
+> **Disclaimer**: This is an unofficial, fan-made website. Capybara Clicker 2 is a fan-made game and is not affiliated with, endorsed by, or associated with the official Capybara Clicker creators or any of its official brands. All characters, names, and assets belong to their respective owners.
+
 ## 🕹️ Play the Games
 
 Below are all the clicker and idle games available in this portal. Click on any game link to start playing:
