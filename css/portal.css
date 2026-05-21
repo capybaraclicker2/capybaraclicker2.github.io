@@ -1,0 +1,393 @@
+/* DOGE Arcade portal System Stylesheet */
+
+:root {
+    --portal-sidebar-width: 260px;
+    --portal-dark-bg: #0d0e12;
+    --portal-sidebar-bg: #12141c;
+    --portal-panel-bg: rgba(255, 255, 255, 0.02);
+    --portal-border-color: rgba(255, 255, 255, 0.07);
+    
+    /* Neon Gradients */
+    --grad-purple: linear-gradient(135deg, #7F00FF, #E100FF);
+    --grad-orange: linear-gradient(135deg, #FF416C, #FF4B2B);
+    --grad-gold: linear-gradient(135deg, #f12711, #f5af19);
+    --grad-green: linear-gradient(135deg, #11998e, #38ef7d);
+    --grad-blue: linear-gradient(135deg, #00c6ff, #0072ff);
+    --grad-magenta: linear-gradient(135deg, #f857a6, #ff5858);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--portal-dark-bg);
+    color: #fff;
+    font-family: 'Outfit', 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Master Layout Grid */
+.portal-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+/* 1. Left Sidebar Styling */
+.portal-sidebar {
+    width: var(--portal-sidebar-width);
+    background-color: var(--portal-sidebar-bg);
+    border-right: 1px solid var(--portal-border-color);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    z-index: 100;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.sidebar-brand {
+    padding: 24px;
+    border-bottom: 1px solid var(--portal-border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar-brand .logo {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #ffd700, #ffb74d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 20px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    overflow-y: auto;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    color: rgba(255, 255, 255, 0.65) !important;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    gap: 12px;
+}
+
+.menu-item i {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.4);
+    transition: color 0.2s ease;
+}
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #fff !important;
+}
+
+.menu-item:hover i {
+    color: var(--doge-gold);
+}
+
+.menu-item.active {
+    background-color: rgba(255, 215, 0, 0.06);
+    border: 1px solid rgba(255, 215, 0, 0.15);
+    color: #fff !important;
+    font-weight: 700;
+}
+
+.menu-item.active i {
+    color: var(--doge-gold);
+}
+
+/* Sidebar Badges */
+.badge {
+    margin-left: auto;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.badge.hot { background: var(--grad-orange); color: #fff; }
+.badge.new { background: var(--grad-green); color: #fff; }
+.badge.try { background: var(--grad-purple); color: #fff; }
+
+/* 2. Main Content panel */
+.portal-main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: var(--portal-dark-bg);
+}
+
+/* Top Navigation Pills */
+.portal-header {
+    background-color: #11131a;
+    border-bottom: 1px solid var(--portal-border-color);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 90;
+}
+
+.top-nav-pills {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scrollbar-width: none; /* Hide scrollbar for clean layout */
+    -webkit-overflow-scrolling: touch;
+    padding-right: 15px;
+}
+
+.top-nav-pills::-webkit-scrollbar {
+    display: none;
+}
+
+.pill-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #fff !important;
+    text-decoration: none !important;
+    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    white-space: nowrap;
+    opacity: 0.65;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pill-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.pill-btn.active {
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    transform: none !important;
+}
+
+/* Premium gradient themes matching cpstest */
+.pill-btn.doge-theme { background: var(--grad-purple); }
+.pill-btn.db-theme { background: var(--grad-orange); }
+.pill-btn.capy-theme { background: var(--grad-gold); }
+.pill-btn.cookie-theme { background: var(--grad-green); }
+.pill-btn.flappy-theme { background: var(--grad-magenta); }
+
+.sidebar-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    margin-left: 15px;
+}
+
+/* 3. Portal Content Wrapper */
+.portal-game-wrapper {
+    padding: 30px 40px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.portal-title-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.portal-title-bar h1 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+}
+
+.trending-badge {
+    background: rgba(255, 215, 0, 0.08);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    color: #ffd700;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: uppercase;
+}
+
+/* 4. Advertisement Banner Slot */
+.portal-ads-slot {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ads-label {
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+/* Responsive media queries */
+@media (max-width: 992px) {
+    .portal-sidebar {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        transform: translateX(-100%);
+    }
+    
+    .portal-sidebar.active {
+        transform: translateX(0);
+    }
+    
+    .sidebar-toggle {
+        display: block;
+    }
+    
+    /* Force close button to display on mobile overlays overriding inline hidden styles */
+    .portal-sidebar #sidebarClose {
+        display: block !important;
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .portal-game-wrapper {
+        padding: 20px 15px;
+    }
+    
+    .portal-title-bar h1 {
+        font-size: 1.8rem;
+    }
+    
+    .portal-header {
+        padding: 12px 15px;
+    }
+}
+
+/* Master responsive iframe adjustments */
+.game-container {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--portal-border-color);
+    border-radius: 20px;
+    padding: 15px;
+    max-width: 850px;
+    width: 100%;
+    margin: 20px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.game-container iframe {
+    border-radius: 12px;
+    width: 100%;
+    height: 850px !important;
+    background: #000;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .game-container {
+        padding: 10px;
+        max-width: 100%;
+    }
+    .game-container iframe {
+        height: 650px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .game-container {
+        padding: 8px;
+    }
+    .game-container iframe {
+        height: 480px !important;
+    }
+}
+
+/* Global Juice Enhancements - Fly Particle Sprites */
+.fly-particle {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+    user-select: none;
+    z-index: 9999;
+    animation: flyOutRotate 0.7s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+@keyframes flyOutRotate {
+    0% {
+        transform: translate(-50%, -50%) scale(0.2) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(1.2) rotate(var(--rot));
+        opacity: 0;
+    }
+}
+
+/* Juicy Float Text Enlarger override */
+.particle {
+    font-size: 2.2rem !important; /* Make +1 little big */
+    text-shadow: 0 0 12px rgba(255, 215, 0, 0.6), 0 3px 6px rgba(0, 0, 0, 0.8) !important;
+    font-weight: 900 !important;
+}
+
+
+
